@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Comment extends Model
 {
+    use Uuid;
     protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $timestamps = false;
     protected $fillable = [
         'content',
         'post_id',
