@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Traits\ResponseTrait;
 use App\Http\Requests\UserRequest;
-use App\Repositories\v1\UserRepository;
+use App\Repositories\UserRepository;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller

@@ -6,7 +6,7 @@ use Exception;
 use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommentRequest;
-use App\Repositories\v1\CommentRepository;
+use App\Repositories\CommentRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\JsonResponse;
 

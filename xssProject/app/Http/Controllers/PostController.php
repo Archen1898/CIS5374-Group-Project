@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Traits\ResponseTrait;
 use App\Http\Requests\PostRequest;
-use App\Repositories\v1\PostRepository;
+use App\Repositories\PostRepository;
 use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
