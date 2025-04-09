@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\v1;
+namespace App\Repositories;
 
 use Exception;
 use App\Models\User;
