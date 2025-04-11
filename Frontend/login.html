@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+
+    <style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Courier New', Courier, monospace;
+        justify-content: center;
+    }
+    input {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        width: 20vw;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    </style>
+
+</head>
+<body>
+  <h2>Enter Your Name</h2>
+  <input type="text" id="nameInput" placeholder="Your name">
+  <button onclick="login()">Login</button>
+
+  <script>
+    function login() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (name) {
+        localStorage.setItem('username', name);
+        window.location.href = 'index.html'; // redirect to posts page
+      } else {
+        alert('Please enter your name!');
+      }
+    }
+  </script>
+</body>
+</html>
