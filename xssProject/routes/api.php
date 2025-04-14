@@ -23,6 +23,10 @@ Route::post('/add_post', function(){
 Route::get('/view_posts', function(){
     return view('ViewPosts');
 });
+Route::get('/submit_post', function () {
+    return view('UserPost');
+});
+
 
 
 Route::get('/login', function(){

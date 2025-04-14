@@ -14,7 +14,7 @@ class CommentRepository
         try{
             $comment = new Comment();
             $newComment = $this->dataFormat($data, $comment);
-    
+            $newComment->save();
             return $newComment;
         }catch (Exception $exception) {
             throw new Exception($exception->getMessage(), Response::HTTP_BAD_REQUEST);

@@ -36,7 +36,13 @@ class AuthRepository
             }
             $user->accessToken = $this->createAuthToken($user)->accessToken;
             //return $user;
-            return view('UserPost',compact('user'));
+            //return redirect('UserPost',compact('user'));
+            return response()->json([
+                'message' => 'Login successful',
+                'status' => 'success',
+                'user_id' => $user->id,
+                'redirect' => '/api/view_posts',
+            ]);
         } catch (ResourceNotFoundException $e) {
             Log::error($e);
             throw new ResourceNotFoundException($e->getMessage(),$e->getCode());
