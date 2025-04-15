@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use Exception;
+use Carbon\Carbon;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,6 +39,8 @@ class UserRepository
         $newUser->name = $request['name'];
         $newUser->email = $request['email'];
         $newUser->password = $request['password'];
+        $newUser->created_at = Carbon::now();
+        
 
         return $newUser;
     }

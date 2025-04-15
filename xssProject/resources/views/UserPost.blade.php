@@ -58,7 +58,7 @@
                 console.log('Response:', response);
                 const data = await response.json();
 
-                if (response.ok && (data.status === 201 || data.status === 'success')) {
+                if (response.ok && (data.status === 200 || data.status === 'success')) {
                     document.getElementById('responseMessage').textContent = '✅ Post created successfully!';
                     document.getElementById('postForm').reset();
                 } else {
