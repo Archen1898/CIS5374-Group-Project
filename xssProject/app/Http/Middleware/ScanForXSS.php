@@ -81,7 +81,17 @@ class ScanForXSS
         $attackLog = new AttackLog();
 
         $attackLog->user_id = $inputData['user_id'];
-        $attackLog->content = json_encode($inputData['comment']);
+        if(isset($inputData['comment'])) {
+            $attackLog->content = json_encode($inputData['comment']);
+        }
+
+        if(isset($inputData['title'])) {
+            $attackLog->content = $attackLog->content .  json_encode($inputData['title']);
+        }
+        if(isset($inputData['content'])) {
+            $attackLog->content = $attackLog->content . ' ' .json_encode($inputData['content']);
+        }
+       
         $attackLog->occured_at = Carbon::now();
 
         $attackLog->save();
